@@ -39,7 +39,53 @@ The project was built to practice:
 
 ---
 
-## Example-Session
+### Project-Structure
+```
+Hotel_Management_System/
+|
+|-- Hotel_Room_booking.py    # Main application file
+|-- README.md                # Project documentation
+```
+
+--- 
+
+## Requirements
+
+- Python 3.14.3 or higher
+- No external dependencies
+
+To confirm Python is installed:
+
+```bash
+python --version
+```
+
+---
+
+## Installation And Usage
+```
+git clone [https://github.com/adilshah150139/Hotel_Management_System.git](https://github.com/adilshah150139/Hotel_Management_System.git)
+```
+---
+
+## How It Works
+
+The application is built around a single `Hotel` class that manages room state using a dictionary.
+
+- Each key in the dictionary is a room number (101, 102, 103).
+- Each value is either `None` (available) or a guest name (booked).
+
+The class provides three methods:
+
+- `show_rooms()` — prints the status of every room
+- `book_room(room, guest_name)` — books a room if it exists and is available
+- `cancel_booking(room)` — frees a room if it is currently booked
+
+The main program is a `while` loop that displays a menu, reads user input, and calls the appropriate method. The loop runs until the user chooses to exit.
+
+---
+
+## Example Session
 
 ------------ Hotel Management System____________
 
@@ -57,34 +103,18 @@ Room Status:
 
 Enter Your Choice: 2
 Enter Room Number: 101
-Enter Guest Name: Alice
+Enter Guest Name: Shah
 Room Successfully Booked! ✅
-```
-
-## Requirements
-
-- Python 3.14.3 or higher
-- No external dependencies
-
-To confirm Python is installed:
-
-```bash
-python --version
 ```
 
 ---
 
-### Project-Structure
-```
-03_Hotel_Management_system/Room_Booking
-|
-|-- Hotel_Room_booking.py    # Main application file
-|-- README.md                # Project documentation
-```
+## Future Improvements
 
---- 
-
-## Installation-And-Usage
-```
-git clone [https://github.com/adilshah150139/Hotel_Management_System.git](https://github.com/adilshah150139/Hotel_Management_System.git)
-```
+- Add input validation with `try/except` to handle non-numeric room input without crashing.
+- Persist bookings to a JSON file so data survives between sessions.
+- Allow rooms to be added or removed dynamically instead of hardcoding 101, 102, 103.
+- Add check-in and check-out dates to each booking.
+- Introduce a `Guest` class to store additional details such as phone number and email.
+- Write unit tests using `unittest` to cover booking, cancellation, and edge cases.
+- Refactor the menu into a separate `main()` function for cleaner structure.
