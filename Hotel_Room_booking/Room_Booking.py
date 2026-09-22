@@ -3,7 +3,9 @@ class Hotel:
         self.rooms = {
             101: None,
             102: None,
-            103: None
+            103: None,
+            104: None,
+            105: None
         }
     def show_rooms(self):
         print("\nRoom Status: ")
